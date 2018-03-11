@@ -1,0 +1,13 @@
+{
+  "name": "purescript-idiomatic-node-buffer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-effect": "^0.1.0",
+    "purescript-foreign": "^4.0.1"
+  }
+}
