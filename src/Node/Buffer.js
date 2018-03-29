@@ -21,3 +21,23 @@ exports.fromStringImpl = function (string) {
         }
     }
 }
+
+exports.concat = function (buffers) {
+    return function (totalLength) {
+        return function () {
+            return Buffer.Buffer.concat(buffers, totalLength)
+        }
+    }
+}
+
+exports.toString = function (encoding) {
+    return function (start) {
+        return function (end) {
+            return function (buffer) {
+                return function () {
+                    return buffer.toString(encoding, start, end)
+                }
+            }
+        }
+    }
+}
