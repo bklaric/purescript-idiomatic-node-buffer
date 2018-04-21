@@ -2,8 +2,6 @@
 
 const Buffer = require("buffer")
 
-exports.undefined = undefined
-
 exports.allocImpl = function (size) {
     return function (fill) {
         return function (encoding) {

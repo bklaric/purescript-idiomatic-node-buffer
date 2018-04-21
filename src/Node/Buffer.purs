@@ -15,13 +15,12 @@ module Node.Buffer
     , toString___
     ) where
 
-import Control.Monad.Effect (Effect)
 import Data.Foreign (Foreign, toForeign)
+import Effect (Effect)
 import Node.Encoding (Encoding, toNodeString)
+import Undefined (undefined)
 
 foreign import data Buffer :: Type
-
-foreign import undefined :: forall anything. anything
 
 foreign import allocImpl :: Int -> Foreign -> String -> Effect Buffer
 
