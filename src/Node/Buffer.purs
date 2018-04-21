@@ -15,7 +15,7 @@ module Node.Buffer
     , toString___
     ) where
 
-import Control.Monad.Effect (Effect)
+import Effect (Effect)
 import Data.Foreign (Foreign, toForeign)
 import Node.Encoding (Encoding, toNodeString)
 

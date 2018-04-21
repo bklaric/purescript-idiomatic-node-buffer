@@ -1,0 +1,10 @@
+{
+  "name": "purescript-idiomatic-node-buffer",
+  "set": "master",
+  "source": "https://github.com/bklaric/package-sets.git",
+  "depends": [
+    "foreign",
+    "effect",
+    "prelude"
+  ]
+}
