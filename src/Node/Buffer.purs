@@ -53,7 +53,11 @@ foreign import concat :: Array Buffer -> Int -> Effect Buffer
 concat_ :: Array Buffer -> Effect Buffer
 concat_ buffers = concat buffers undefined
 
-foreign import toString :: Encoding -> Int -> Int -> Buffer -> Effect String
+foreign import toStringImpl :: String -> Int -> Int -> Buffer -> Effect String
+
+toString :: Encoding -> Int -> Int -> Buffer -> Effect String
+toString encoding start end buffer =
+    toStringImpl (toNodeString encoding) start end buffer
 
 toString_ :: Encoding -> Int -> Buffer -> Effect String
 toString_ encoding start buffer = toString encoding start undefined buffer

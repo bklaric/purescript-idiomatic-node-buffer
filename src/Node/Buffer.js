@@ -28,7 +28,7 @@ exports.concat = function (buffers) {
     }
 }
 
-exports.toString = function (encoding) {
+exports.toStringImpl = function (encoding) {
     return function (start) {
         return function (end) {
             return function (buffer) {
