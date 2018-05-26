@@ -60,10 +60,12 @@ toString encoding start end buffer =
     toStringImpl (toNodeString encoding) start end buffer
 
 toString_ :: Encoding -> Int -> Buffer -> Effect String
-toString_ encoding start buffer = toString encoding start undefined buffer
+toString_ encoding start buffer =
+    toStringImpl (toNodeString encoding) start undefined buffer
 
 toString__ :: Encoding -> Buffer -> Effect String
-toString__ encoding buffer = toString_ encoding undefined buffer
+toString__ encoding buffer =
+    toStringImpl (toNodeString encoding) undefined undefined buffer
 
 toString___ :: Buffer -> Effect String
-toString___ buffer = toString__ undefined buffer
+toString___ buffer = toStringImpl undefined undefined undefined buffer
