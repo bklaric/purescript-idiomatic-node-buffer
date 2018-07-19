@@ -15,7 +15,7 @@ module Node.Buffer
     , toString___
     ) where
 
-import Data.Foreign (Foreign, toForeign)
+import Foreign (Foreign, unsafeToForeign)
 import Effect (Effect)
 import Node.Encoding (Encoding, toNodeString)
 import Undefined (undefined)
@@ -28,17 +28,17 @@ alloc :: Int -> Effect Buffer
 alloc size = allocImpl size undefined undefined
 
 allocBuffer :: Int -> Buffer -> Effect Buffer
-allocBuffer size fill = allocImpl size (toForeign fill) undefined
+allocBuffer size fill = allocImpl size (unsafeToForeign fill) undefined
 
 allocInteger :: Int -> Int -> Effect Buffer
-allocInteger size fill = allocImpl size (toForeign fill) undefined
+allocInteger size fill = allocImpl size (unsafeToForeign fill) undefined
 
 allocString :: Int -> String -> Encoding -> Effect Buffer
 allocString size fill encoding =
-    allocImpl size (toForeign fill) (toNodeString encoding)
+    allocImpl size (unsafeToForeign fill) (toNodeString encoding)
 
 allocString_ :: Int -> String -> Effect Buffer
-allocString_ size fill = allocImpl size (toForeign fill) undefined
+allocString_ size fill = allocImpl size (unsafeToForeign fill) undefined
 
 foreign import fromStringImpl :: String -> String -> Effect Buffer
 

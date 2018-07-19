@@ -4,7 +4,7 @@ import Prelude
 
 import Control.Monad.Except (runExcept)
 import Data.Either (Either)
-import Data.Foreign (F, Foreign, ForeignError, unsafeReadTagged)
+import Foreign (F, Foreign, ForeignError, unsafeReadTagged)
 import Data.List.Types (NonEmptyList)
 import Node.Buffer (Buffer)
 

@@ -1,0 +1,30 @@
+{
+  "name": "purescript-idiomatic-node-buffer",
+  "homepage": "https://github.com/bklaric/purescript-idiomatic-node-buffer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bklaric/purescript-idiomatic-node-buffer"
+  },
+  "authors": [
+    "Branimir Klarić <branimir.klaric.bk@gmail.com>"
+  ],
+  "description": "An idiomatic wrapper for Node's Buffer API.",
+  "main": "",
+  "keywords": [
+    "purescript",
+    "node",
+    "buffer"
+  ],
+  "license": "AGPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-foreign": "^5.0.0",
+    "purescript-undefined": "^1.0.1"
+  }
+}
